@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -35,17 +35,17 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-blue-50 dark:bg-blue-900">
-      <header className="bg-blue-600 dark:bg-blue-800 p-4 flex justify-between items-center">
+    <div className="min-h-screen flex flex-col bg-yellow-100 dark:bg-yellow-800">
+      <header className="bg-yellow-400 dark:bg-yellow-600 p-4 flex justify-between items-center">
         <div className="w-10"></div>
-        <h1 className="text-2xl font-bold text-white">Blue Todo App</h1>
+        <h1 className="text-2xl font-bold text-yellow-900 dark:text-yellow-100">Yellow Todo App</h1>
         <Button variant="ghost" size="icon" onClick={toggleTheme}>
-          {theme === "dark" ? <Sun className="h-5 w-5 text-white" /> : <Moon className="h-5 w-5 text-white" />}
+          {theme === "dark" ? <Sun className="h-5 w-5 text-yellow-100" /> : <Moon className="h-5 w-5 text-yellow-900" />}
         </Button>
       </header>
 
       <main className="flex-grow flex justify-center items-start pt-10">
-        <Card className="w-full max-w-md p-6 bg-blue-100 dark:bg-blue-800">
+        <Card className="w-full max-w-md p-6 bg-yellow-50 dark:bg-yellow-700">
           <div className="flex space-x-2 mb-4">
             <Input
               type="text"
@@ -54,14 +54,14 @@ const Index = () => {
               onChange={(e) => setNewTodo(e.target.value)}
               className="flex-grow"
             />
-            <Button onClick={addTodo}>Add</Button>
+            <Button onClick={addTodo} className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900">Add</Button>
           </div>
 
           <ul className="space-y-2">
             {todos.map((todo) => (
               <li
                 key={todo.id}
-                className="flex items-center space-x-2 bg-white dark:bg-blue-700 p-2 rounded"
+                className="flex items-center space-x-2 bg-white dark:bg-yellow-600 p-2 rounded"
               >
                 <Checkbox
                   checked={todo.completed}
@@ -83,8 +83,8 @@ const Index = () => {
         </Card>
       </main>
 
-      <footer className="bg-blue-600 dark:bg-blue-800 p-4 text-center text-white">
-        © 2023 Blue Todo App
+      <footer className="bg-yellow-400 dark:bg-yellow-600 p-4 text-center text-yellow-900 dark:text-yellow-100">
+        © 2023 Yellow Todo App
       </footer>
     </div>
   );
